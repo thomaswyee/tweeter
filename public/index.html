@@ -25,6 +25,7 @@
     <link rel="stylesheet" href="/styles/nav.css" />
     <link rel="stylesheet" href="/styles/header.css" />
     <link rel="stylesheet" href="/styles/new-tweet.css" />
+    <link rel="stylesheet" href="/styles/tweet.css" />
     <!-- External JS -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
@@ -35,6 +36,7 @@
       type="text/javascript"
       src="/scripts/composer-char-counter.js"
     ></script>
+    <script type="text/javascript" src="/scripts/hover.js"></script>
   </head>
 
   <body>
@@ -69,15 +71,21 @@
         </form>
 
         <article id="">
-          <header>
-            <h2>username</h2>
+          <header class="tweet-header">
+            <p class="name">username</p>
+            <p class="hide">@username</p>
           </header>
-          <div class="content">
-            <ul>
-              <li></li>
-            </ul>
+          <div class="tweet-content">
+            <p>hello world!</p>
           </div>
-          <footer>description</footer>
+          <footer>
+            <div class="date"><p>10 days ago</p></div>
+            <div class="labels">
+              <i class="fas fa-flag"></i>
+              <i class="fas fa-retweet"></i>
+              <i class="fas fa-heart"></i>
+            </div>
+          </footer>
         </article>
       </section>
     </main>

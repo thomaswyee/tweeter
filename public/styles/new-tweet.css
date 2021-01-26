@@ -1,0 +1,35 @@
+form {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+}
+textarea {
+  border: none;
+  border-bottom: black solid 4px;
+  background-color: transparent;
+  resize: none;
+  outline: none;
+  width: 100%;
+}
+
+form div {
+  display: flex;
+  justify-content: space-between;
+}
+
+button {
+  font-family: 'Bungee', cursive;
+  font-size: 1rem;
+  background-color: #aee6e6;
+  color: white;
+  border: none;
+  margin: 10px 0;
+}
+
+output {
+  font-family: 'Bungee', cursive;
+  font-size: 1rem;
+  color: black;
+  border: none;
+  margin: 10px 0;
+}

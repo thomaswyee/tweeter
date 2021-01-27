@@ -37,11 +37,12 @@
       src="/scripts/composer-char-counter.js"
     ></script>
     <script type="text/javascript" src="/scripts/hover.js"></script>
+    <script type="text/javascript" src="/scripts/nav-sticky.js"></script>
   </head>
 
   <body>
     <!-- Top nav bar (fixed) -->
-    <nav>
+    <nav id="nav_bar">
       <span>tweeter</span>
       <div class="nav-right">
         <p><strong>Write</strong> a new tweet</p>
@@ -70,6 +71,23 @@
           </div>
         </form>
 
+        <article id="">
+          <header class="tweet-header">
+            <p class="name">username</p>
+            <p class="hide">@username</p>
+          </header>
+          <div class="tweet-content">
+            <p>hello world!</p>
+          </div>
+          <footer>
+            <div class="date"><p>10 days ago</p></div>
+            <div class="labels">
+              <i class="fas fa-flag"></i>
+              <i class="fas fa-retweet"></i>
+              <i class="fas fa-heart"></i>
+            </div>
+          </footer>
+        </article>
         <article id="">
           <header class="tweet-header">
             <p class="name">username</p>

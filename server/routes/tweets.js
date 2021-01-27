@@ -1,12 +1,16 @@
 'use strict';
 
 const userHelper = require('../lib/util/user-helper');
-
+const cors = require('cors');
 const express = require('express');
 const tweetsRoutes = express.Router();
 
 module.exports = function (DataHelpers) {
-  tweetsRoutes.get('/', function (req, res) {
+  const corsOptions = {
+    origin: 'http://localhost:8080',
+    optionsSuccessStatus: 200, // some legacy browsers (IE11, various SmartTVs) choke on 204
+  };
+  tweetsRoutes.get('/', cors(corsOptions), function (req, res) {
     DataHelpers.getTweets((err, tweets) => {
       if (err) {
         res.status(500).json({ error: err.message });
@@ -16,7 +20,7 @@ module.exports = function (DataHelpers) {
     });
   });
 
-  tweetsRoutes.post('/', function (req, res) {
+  tweetsRoutes.post('/', cors(corsOptions), function (req, res) {
     if (!req.body.text) {
       res.status(400).json({ error: 'invalid request: no data in POST body' });
       return;

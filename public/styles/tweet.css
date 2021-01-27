@@ -36,6 +36,12 @@ article:hover + .hide {
   margin: 0;
 }
 
+.header-right {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  box-sizing: border-box;
+}
 .tweet-content {
   border-bottom: black solid 4px;
   box-sizing: border-box;

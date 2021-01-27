@@ -1,10 +1,17 @@
-function enter() {
-  $('.hide').css({ display: 'inline-block', color: 'grey' });
+function enter(id) {
+  $(`#${id}`).find('.hide').css({ display: 'inline-block', color: 'grey' });
 }
-function out() {
-  $('.hide').css({ display: 'none' });
+function out(id) {
+  $(`#${id}`).find('.hide').css({ display: 'none' });
 }
 $(document).ready(function () {
   // when mouse over the tweet, trigger the display of hiddent context
-  $('article').hover(enter, out);
+  $(`article`).mouseenter(function () {
+    let id = $(this).attr('id');
+    enter(id);
+  });
+  $(`article`).mouseleave(function () {
+    let id = $(this).attr('id');
+    out(id);
+  });
 });

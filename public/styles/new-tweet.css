@@ -51,6 +51,13 @@ button {
   color: white;
   border: none;
   margin: 10px 0;
+  border: #6f9ca6 solid 2px;
+  border-radius: 25px;
+}
+
+button:hover {
+  top: 5px;
+  box-shadow: 5px 5px 15px #020d0c;
 }
 
 output {

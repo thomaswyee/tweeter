@@ -52,7 +52,11 @@ $(document).ready(function () {
   };
   const createTweetElement = function (userObj) {
     // take a user object, and create a tweet element
-    const date = new Date(userObj.created_at).toLocaleDateString('en-US');
+    const currTime = +new Date();
+    const dateDiff = Math.round(
+      (currTime - userObj.created_at) / (1000 * 60 * 60 * 24)
+    );
+    console.log(dateDiff);
     const tweet = `
   <article class="tweet-box" id=${userObj.user.name}>
           <header class="tweet-header">
@@ -68,7 +72,7 @@ $(document).ready(function () {
             <p>${userObj.content.text}</p>
           </div>
           <footer>
-            <div class="date"><p>${date}</p></div>
+            <div class="date"><p>${dateDiff} days ago</p></div>
             <div class="labels">
               <i class="fas fa-flag"></i>
               <i class="fas fa-retweet"></i>

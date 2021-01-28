@@ -1,5 +1,5 @@
 $(document).ready(function () {
-  //
+  //make the nav-bar sticky
   $(window).scroll(function () {
     //if you hard code, then use console
     //.log to determine when you want the

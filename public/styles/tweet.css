@@ -1,4 +1,4 @@
-article {
+.container article {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -16,11 +16,11 @@ article {
   filter: blur(1px);
 }
 
-.hide {
+.container .hide {
   display: none;
 }
 
-.tweet-header {
+.container .tweet-header {
   background-color: transparent;
   display: flex;
   flex-direction: row;
@@ -31,20 +31,22 @@ article {
   margin: 0;
 }
 
-.header-right {
+.container .header-right {
   display: flex;
   flex-direction: row;
   justify-content: flex-start;
   box-sizing: border-box;
 }
-.tweet-content {
+
+.container .tweet-content {
   border-bottom: #020d0c solid 4px;
   box-sizing: border-box;
   width: 98%;
   padding: 0 10px;
   margin: 0 0 0 6px;
 }
-footer {
+
+.container footer {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
@@ -54,11 +56,11 @@ footer {
   width: 98;
   color: #6f9ca6;
 }
-.date p {
+.container .date p {
   margin-top: 0;
 }
 
-.labels {
+.container .labels {
   display: flex;
   flex-direction: row;
   justify-content: space-around;

@@ -31,6 +31,14 @@ body {
 /*
  * Additional CSS can be defined below or in other CSS files, as per instructions
  */
+
+.body-container {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
 main {
   width: 90%;
   background-color: #f2f2f5;
@@ -51,4 +59,48 @@ main {
   right: 10%;
   width: 30px;
   height: 30px;
+}
+
+/* Desktop styles */
+@media only screen and (min-width: 800px) {
+  #nav_bar {
+    background: #6f9ca6;
+  }
+
+  .body-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: flex-start;
+    padding: 60px;
+  }
+
+  .body-container #profile-header {
+    width: 30%;
+    height: 30%;
+    position: sticky;
+    top: 120px;
+    margin: 20px 80px 20px 20px;
+    border: #d7d7d9 solid 2px;
+    border-radius: 25px;
+  }
+  .body-container #profile-header div {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px 0 0 0;
+  }
+  .body-container #profile-header img {
+    width: 60%;
+    height: 60%;
+  }
+
+  .body-container #profile-header h2 {
+    padding: 0;
+    margin: 0;
+  }
+  .body-container main {
+    width: 60%;
+    margin-left: 80px;
+  }
 }

@@ -5,7 +5,7 @@
  */
 
 $(document).ready(function () {
-  // post data from the form to the server
+  /* ----------------ajax post request to server-------------------------- */
   const postTweet = function (data) {
     const url = '/tweets';
     $.ajax({
@@ -14,6 +14,7 @@ $(document).ready(function () {
       data,
     })
       .done((result) => {
+        // after successful post to the server, load the updated tweets
         loadTweets();
       })
       .fail(() => {
@@ -24,7 +25,8 @@ $(document).ready(function () {
       });
   };
 
-  // fetch data from our server and render them into DOM elements
+  /* --------------------------ajax get requet to server------------------- */
+
   const loadTweets = function () {
     const url = '/tweets';
     $.ajax({
@@ -32,6 +34,7 @@ $(document).ready(function () {
       method: 'GET',
     })
       .done((result) => {
+        // fetch data from our server and render them into DOM elements
         renderTweets(result);
       })
       .fail(() => {
@@ -42,17 +45,21 @@ $(document).ready(function () {
       });
   };
 
+  /* ---------------------Render array of tweets into DOM---------------- */
   const renderTweets = function (tweets) {
     // loops through tweets
-    // calls createTweetElement for each tweet
-    // takes return value and appends it to the tweets container
     return tweets.map((userObj) => {
+      // calls createTweetElement for each tweet
+      // takes return value and appends it to the tweets container
       return $('main').append(createTweetElement(userObj));
     });
   };
+
+  /* ---------------------Create tweet---------------------------------- */
   const createTweetElement = function (userObj) {
-    // take a user object, and create a tweet element
+    // get the timestamp of today
     const currTime = +new Date();
+    // calculate the date difference between today and the date when the tweet was created.
     const dateDiff = Math.round(
       (currTime - userObj.created_at) / (1000 * 60 * 60 * 24)
     );
@@ -79,7 +86,6 @@ $(document).ready(function () {
             </div>
           </footer>
   `;
-
     return tweet;
   };
 

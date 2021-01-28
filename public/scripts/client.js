@@ -56,7 +56,6 @@ $(document).ready(function () {
     const dateDiff = Math.round(
       (currTime - userObj.created_at) / (1000 * 60 * 60 * 24)
     );
-    console.log(dateDiff);
     const tweet = `
   <article class="tweet-box" id=${userObj.user.name}>
           <header class="tweet-header">

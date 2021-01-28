@@ -30,7 +30,7 @@ nav p {
   font-family: 'Source Sans Pro', sans-serif;
   margin: 0;
 }
-nav i {
+#downArrow {
   color: red;
   margin-top: 8px;
   transition: all 0.3s ease;
@@ -39,6 +39,22 @@ nav i {
   left: 0px;
   position: relative;
   z-index: 999;
+  animation: floating 2s linear infinite alternate;
+}
+
+@keyframes floating {
+  0% {
+    top: 0px;
+    left: 0px;
+  }
+  50% {
+    top: 10px;
+    left: 0px;
+  }
+  100% {
+    top: 0px;
+    left: 0px;
+  }
 }
 
 i:hover {

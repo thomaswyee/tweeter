@@ -1,7 +1,34 @@
+.new-tweet .errors {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 0;
+  margin: 0;
+}
+
+.error1 {
+  color: red;
+  box-sizing: border-box;
+  border: red solid 2px;
+  padding: 5px 20px;
+  margin: 10px 0 0 0;
+  display: none;
+}
+.error2 {
+  color: red;
+  box-sizing: border-box;
+  border: red solid 2px;
+  padding: 5px 20px;
+  margin: 10px 0 0 10px;
+  display: none;
+}
+
 form {
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
+  margin-top: 20px;
 }
 textarea {
   border: none;

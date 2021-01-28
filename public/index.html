@@ -38,6 +38,8 @@
     ></script>
     <script type="text/javascript" src="/scripts/hover.js"></script>
     <script type="text/javascript" src="/scripts/nav-sticky.js"></script>
+    <script type="text/javascript" src="/scripts/frmT.js"></script>
+    <script type="text/javascript" src="/scripts/scroll.js"></script>
   </head>
 
   <body>
@@ -46,7 +48,7 @@
       <span>tweeter</span>
       <div class="nav-right">
         <p><strong>Write</strong> a new tweet</p>
-        <i class="fas fa-angle-double-down"></i>
+        <i class="fas fa-angle-double-down" id="downArrow"></i>
       </div>
     </nav>
     <header>
@@ -55,18 +57,24 @@
           src="https://styles.redditmedia.com/t5_1o620z/styles/profileIcon_snoo514e0bfe-ac68-4fb8-be6a-0841871cce71-headshot.png?width=256&height=256&crop=256:256,smart&s=bf203d5b9befaba82f90cf14586e5731c877626b"
         />
       </div>
-      <br />
       <div>
         <h2>Thomas Yi</h2>
       </div>
     </header>
     <!-- Page-specific (main) content here -->
     <main class="container">
-      <section class="new-tweet">
-        <h2>Compose Tweet</h2>
+      <section class="new-tweet" id="newTweetSec">
+        <div class="errors">
+          <p class="error1">
+            <i class="fas fa-exclamation-triangle"></i>Your tweet is too long
+          </p>
+          <p class="error2">
+            <i class="fas fa-exclamation-triangle"></i>Your tweet is empty
+          </p>
+        </div>
         <form action="/tweets" method="POST" id="new-tweet-frm">
           <label for="tweet-text">What are you humming about?</label>
-          <textarea name="text" id="tweet-text"></textarea>
+          <textarea name="text" id="tweet-text" autofocus></textarea>
           <div>
             <button type="submit" id="btn">Tweet</button>
             <output name="counter" class="counter" for="tweet-text">140</output>
@@ -74,5 +82,11 @@
         </form>
       </section>
     </main>
+    <div class="scroll-up">
+      <i class="fas fa-arrow-alt-circle-up" id="scroll-up"></i>
+    </div>
+    <footer id="footer">
+      <p>© Copyright 2021 Thomas Yi</p>
+    </footer>
   </body>
 </html>

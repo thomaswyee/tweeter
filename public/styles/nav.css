@@ -10,6 +10,7 @@ nav {
 
 .sticky {
   position: fixed;
+  z-index: 100;
   top: 0;
   width: 100%;
 }
@@ -31,4 +32,16 @@ nav p {
 }
 nav i {
   color: red;
+  margin-top: 8px;
+  transition: all 0.3s ease;
+  position: relative;
+  top: 0px;
+  left: 0px;
+  position: relative;
+  z-index: 999;
+}
+
+i:hover {
+  top: 5px;
+  box-shadow: 5px 5px 15px #020d0c;
 }

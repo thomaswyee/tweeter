@@ -36,3 +36,19 @@ main {
   background-color: #f2f2f5;
   color: #020d0c;
 }
+
+.scroll-up {
+  position: fixed;
+  z-index: 100;
+}
+#scroll-up {
+  display: none;
+  color: red;
+  font-size: 3em;
+  position: fixed;
+  z-index: 999;
+  bottom: 10%;
+  right: 10%;
+  width: 30px;
+  height: 30px;
+}

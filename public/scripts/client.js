@@ -5,6 +5,7 @@
  */
 
 $(document).ready(function () {
+  // post data from the form to the server
   const postTweet = function (data) {
     const url = '/tweets';
     $.ajax({
@@ -13,7 +14,7 @@ $(document).ready(function () {
       data,
     })
       .done((result) => {
-        console.log(result);
+        loadTweets();
       })
       .fail(() => {
         console.log('error');
@@ -22,6 +23,8 @@ $(document).ready(function () {
         console.log('completed');
       });
   };
+
+  // fetch data from our server and render them into DOM elements
   const loadTweets = function () {
     const url = '/tweets';
     $.ajax({
@@ -29,7 +32,6 @@ $(document).ready(function () {
       method: 'GET',
     })
       .done((result) => {
-        console.log(result);
         renderTweets(result);
       })
       .fail(() => {
@@ -39,6 +41,7 @@ $(document).ready(function () {
         console.log('completed');
       });
   };
+
   const renderTweets = function (tweets) {
     // loops through tweets
     // calls createTweetElement for each tweet
@@ -76,7 +79,11 @@ $(document).ready(function () {
 
     return tweet;
   };
+
+  // get tweets from our server when we are loading the page
   loadTweets();
+
+  // when we submit new tweet, there are few events happening
   $('#new-tweet-frm').on('submit', function (event) {
     // prevent the default form submission
     event.preventDefault();
@@ -85,17 +92,19 @@ $(document).ready(function () {
     const content = inputBox.val();
     const data = inputBox.serialize();
     console.log(data);
+    // data validation: if tweet is empty or too long, show the error message, otherwise, update our database and render new tweets
     if (content && inputBox.val().length <= 140) {
-      // empty the old tweets section
+      // clear the previous effects and tweets section
       $('article').remove();
       postTweet(data);
       inputBox.val('');
       $('.counter').text(`140`).css({ color: '#020d0c' });
-      loadTweets();
+      $('.error2').css({ display: 'none' });
+      $('.error1').css({ display: 'none' });
     } else if (!content) {
-      alert(`Your tweet can't be empty`);
+      $('.error2').css({ display: 'block' });
     } else if (inputBox.val().length > 140) {
-      alert(`Your tweet is too long`);
+      $('.error1').css({ display: 'block' });
     }
   });
 });

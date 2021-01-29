@@ -10,7 +10,3 @@
     'https://www.transparenttextures.com/patterns/blizzard.png'
   );
 }
-
-#profile-header:hover {
-  box-shadow: 12px 12px 2px 1px rgba(33, 33, 33, 0.2);
-}

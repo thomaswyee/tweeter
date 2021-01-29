@@ -4,7 +4,7 @@ Tweeter is a simple, single-page Twitter clone. HTML, CSS, JS, jQuery and AJAX a
 
 ## Final Product
 
-1. Display features
+#### 1. Display features
 
 - Navigation bar is fixed to the top, and when the screen width smaller than 800px, it will merge with header
   !["desktop display"](public/images/responsive-design.png)
@@ -13,7 +13,7 @@ Tweeter is a simple, single-page Twitter clone. HTML, CSS, JS, jQuery and AJAX a
 - Individual tweets are displayed reverse-chronologically
   !["date"](public/images/date.png)
 
-2. Behaviour
+#### 2. Behaviour
 
 - Character Counter. Will display the remaining number of character allowed (140) in the textarea.
   !["counter"](public/images/counter.png)
@@ -28,7 +28,7 @@ Tweeter is a simple, single-page Twitter clone. HTML, CSS, JS, jQuery and AJAX a
 - When a valid tweet submitted, tweets will refresh, the compose tweet textarea is cleared, and counter reset
   !["new-tweet"](public/images/new-tweet.png)
 
-3. Stretch and extra features
+#### 3. Stretch and extra features
 
 - Toggle form. The red arrow sign underneath the wirte a new tweet is animated, and when you click it, the compose tweet section will toggle back and forth.
   !["stretch-toggleFOrm"](public/images/stretch-toggleFOrm.png)
